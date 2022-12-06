@@ -1,0 +1,4 @@
+CREATE DATABASE CubeTimerDB;
+CREATE TABLE Times(
+	time DECIMAL(10,2)
+);
