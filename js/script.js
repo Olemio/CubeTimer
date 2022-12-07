@@ -14,8 +14,8 @@ var timesInserted = 0;
 
 var timeTable = []; //[Solve, Time, Avg5, Avg12]
 
-correctCurrentTimesArrayValues()
-generateScramble();
+correctCurrentTimesArrayValues() // MySQL data into js array
+generateScramble(); //generates scramble
 createTimeTable(); //Push times and averages to their arrays
 getLowestAverage(); //Find lowest x amount of times i a row from Array
 timeListPannelInnerHTML(); //Display time list innerHTML
@@ -26,8 +26,8 @@ function correctCurrentTimesArrayValues() {// MySQL data into js array
         currentTimesArray.push(+databaseTimeList[i].time)
     }
 }
-function insertIntoDatabase(){
-
+function insertDB(){
+    //document.forms.saveTime.time.value = currentTime //set form value to current time
 }
 function generateScramble() {
     var move; //includes face to turn and how to turn it. Ex. 2F
@@ -184,7 +184,9 @@ document.addEventListener('keydown', (spaceDown) => { //Spacebar down
         getLowestAverage(); //Find lowest x amount of times i a row from Array
         timeListPannelInnerHTML(); //Display time list innerHTML
         averagePannelInnerHTML(); //Display averages innerHTML
-        InsertTimeDB()
+
+        insertDB()
+
     }keydown++
 }); 
 

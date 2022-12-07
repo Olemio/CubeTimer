@@ -1,6 +1,6 @@
 <?php
 		//Tilkoblingsinformasjon
-			$tjener = "localhost";
+			$tjener = "http://10.0.0.1";
 			$brukernavn = "root";
 			$passord = "";
 			$database = "CubeTimerDB";

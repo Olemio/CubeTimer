@@ -1,5 +1,6 @@
 <?php
     include 'php/connection_info.php';
+    include 'php/insertTable.php'
 ?>
 
 <!DOCTYPE html>
@@ -61,32 +62,21 @@
             
         </tbody>
     </table>
-    <!-- Insert times to database -->
-    <?php 
-        
-            $sqlInsert = "INSERT INTO `times`(`time`) VALUES (8.32);";
-            // mysqli_query($conn, $sqlInsert); denne linjen er ikke glad
-            echo "hello PHP";
-        
-    ?>
-    <!-- Select times from database-->
-    <?php 
-        $sqlSelect = "SELECT time FROM times;";
-        $result = mysqli_query($conn, $sqlSelect);
-        $times = array();
-        if(mysqli_num_rows($result) > 0) {
-            while($row = mysqli_fetch_assoc($result)) { 
-                $times[] = $row;
-            }
-        }
-    ?>
 
-    <script>
-        function InsertTimeDB(){
-            var insertion="<?php php_insertTime();?>";
-            alert(insertion);
+    
+  
+    <!-- Select times from database -->
+    <?php
+    $sqlSelect = "SELECT time FROM times;";
+    $result = mysqli_query($conn, $sqlSelect);
+    $times = array();
+    if(mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) { 
+            $times[] = $row;
         }
-        
+    }
+    ?>
+    <script>
         var databaseTimeList = <?php echo json_encode($times); ?>; //Put database times into an js array
     </script>
 
