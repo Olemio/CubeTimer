@@ -1,5 +1,5 @@
 <?php
-    include 'php/connection_info.php';
+    include 'php/connectionInfo.php';
     include 'php/insertTable.php'
 ?>
 
@@ -16,9 +16,11 @@
     <div>
         <h1 id="scramble"></h1>
     </div>
+    
     <div> <!--Timer-->
         <h1 id="timerClock">0.00</h1> 
     </div>
+
     <table id="listOfAverages"> <!--Pannel displaying time/avreages and best time/averages -->
         <tr>
             <th></th>
@@ -45,7 +47,6 @@
             <td class="times" id="averageOf100">-</td>
             <td class="times" id="bestAverageOf100">-</td>
         </tr>
-
     </table>
 
     <table id="listOfTimes"><!--Pannel displaying solve-number, times, avg5, avg12-->
@@ -59,22 +60,19 @@
             <th>Ao12</th>
         </tr>
         <tbody id="timeTable">
-            
         </tbody>
     </table>
-
-    
   
     <!-- Select times from database -->
     <?php
-    $sqlSelect = "SELECT time FROM times;";
-    $result = mysqli_query($conn, $sqlSelect);
-    $times = array();
-    if(mysqli_num_rows($result) > 0) {
-        while($row = mysqli_fetch_assoc($result)) { 
-            $times[] = $row;
+        $sqlSelect = "SELECT time FROM times;";
+        $result = mysqli_query($conn, $sqlSelect);
+        $times = array();
+        if(mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) { 
+                $times[] = $row;
+            }
         }
-    }
     ?>
     <script>
         var databaseTimeList = <?php echo json_encode($times); ?>; //Put database times into an js array

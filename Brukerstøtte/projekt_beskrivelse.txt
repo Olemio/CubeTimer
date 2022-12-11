@@ -1,0 +1,9 @@
+Web basert timer for rubiks kube
+Blannings generator
+Stoppeklokke
+Oversikt over nåverende snitt + tid og beste snitt + tid
+Gjennomsnitt på hele økten og hvor mange tider som ligger i økten
+Tabell med [hvilken "solve" i tabellen, tiden du fikk, snittet av 5 når du fikk tiden, snittet av 12 når du fikk tiden.
+
+Liste med kun tidene lagres i MySQL database
+MySQL database og programmet kjører på ekstern server på mini pc.

@@ -7,7 +7,7 @@
 </form>
 
 <?php 
-include 'php/connection_info.php';
+    include 'php/connectionInfo.php';
 
     echo "Before func"; 
     echo $_POST["score"]; 

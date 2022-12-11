@@ -8,14 +8,14 @@ var sec = 0;
 var myInterval; 
 var myTimeout;
 var spaceClicks = 1;
-var keydown = 1
+var keydown = 1;
 var currentTime; //Timer value
 var currentTimesArray = [];
 var timesInserted = 0;
 
 var timeTable = []; //[Solve, Time, Avg5, Avg12]
 
-correctCurrentTimesArrayValues() // MySQL data into js array
+correctCurrentTimesArrayValues(); // MySQL data into js array
 generateScramble(); //generates scramble
 createTimeTable(); //Push times and averages to their arrays
 getLowestAverage(); //Find lowest x amount of times i a row from Array
@@ -24,9 +24,9 @@ averagePannelInnerHTML(); //Display averages innerHTML
 
 function correctCurrentTimesArrayValues() {// MySQL data into js array
     for (i = 0; i < databaseTimeList.length; i++){
-        currentTimesArray.push(+databaseTimeList[i].time)
-    }
-}
+        currentTimesArray.push(+databaseTimeList[i].time);
+    };
+};
 function insertDB(){
     document.forms.saveTime.score.value = currentTime //set form value to current time
     submit.click();
