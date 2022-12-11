@@ -5,3 +5,6 @@
 #timeTable{
     width: 20vw;
 }
+#submit{
+    display: none;
+}

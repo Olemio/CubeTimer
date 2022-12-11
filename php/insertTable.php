@@ -1,10 +1,9 @@
   <!-- Insert times to database -->
-
+<link rel="stylesheet" href="css/style.css">
     
 <form method="POST" name="saveTime">
-    <input type="text" name="score" value="0">
-    <!-- <input type="submit" name="save" value="Lagre score">
-    <input type="submit" name="sove" value="Lagre scure"> -->
+    <input type="hidden" name="score" value="">
+    <input type="submit" name="save" id="submit" value="Lagre score">
 </form>
 
 <?php 
@@ -28,15 +27,15 @@ include 'php/connection_info.php';
     
         //Lagrer feltene i variable
         $score = $_POST["score"];
-    
+
         $sql = "INSERT INTO times(time) VALUES ('$score')"; 
-        echo "after func"; 
+        
+        
     
-        // if ($kobling->query($sql)) {
-        //     header("Refresh:0"); // Oppdaterer siden så de nye resultatene blir vist
-        // } else {
-        //     echo "Noe gikk galt med spørringen $sql ($kobling->error).";
-        // }
+        if ($kobling->query($sql)) {
+        } else {
+            echo "Noe gikk galt med spørringen $sql ($kobling->error).";
+        }
     }
     
 ?>

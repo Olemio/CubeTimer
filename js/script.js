@@ -1,7 +1,8 @@
 //http://localhost/index.php/%20app.use(%22/static%22,%20express.static('./static/'));
 
 const clock = document.getElementById("timerClock");
-const listOfTimes = document.getElementById("listOfTimes")
+const listOfTimes = document.getElementById("listOfTimes");
+const submit = document.getElementById("submit");
 // var avg = average
 var sec = 0;
 var myInterval; 
@@ -27,7 +28,8 @@ function correctCurrentTimesArrayValues() {// MySQL data into js array
     }
 }
 function insertDB(){
-    //document.forms.saveTime.time.value = currentTime //set form value to current time
+    document.forms.saveTime.score.value = currentTime //set form value to current time
+    submit.click();
 }
 function generateScramble() {
     var move; //includes face to turn and how to turn it. Ex. 2F
@@ -174,7 +176,7 @@ function timeListPannelInnerHTML(){ //Display time list innerHTML
   
 document.addEventListener('keydown', (spaceDown) => { //Spacebar down
     if(spaceDown.code === 'Space' && spaceClicks == 1 && keydown == 1){ //Starting timer
-        myTimeout = setTimeout(addClick, 10); 
+        myTimeout = setTimeout(addClick, 300); 
     }else  if(spaceDown.code === 'Space' && spaceClicks == 3){ //Stopping timer
         clearInterval(myInterval);
         spaceClicks++;
@@ -184,9 +186,7 @@ document.addEventListener('keydown', (spaceDown) => { //Spacebar down
         getLowestAverage(); //Find lowest x amount of times i a row from Array
         timeListPannelInnerHTML(); //Display time list innerHTML
         averagePannelInnerHTML(); //Display averages innerHTML
-
         insertDB()
-
     }keydown++
 }); 
 
@@ -202,6 +202,7 @@ document.addEventListener('keyup', (spaceUp) => { //Spacebar up
     }else if(spaceUp.code === 'Space' && spaceClicks == 4){ //Stopping Timer
         sec = 0;
         spaceClicks = 1; 
+        
     } keydown = 1;
 }); 
 

@@ -17,7 +17,7 @@
         <h1 id="scramble"></h1>
     </div>
     <div> <!--Timer-->
-        <h1 id="timerClock">0.00</h1> <!-- Make FROMmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmMMMMMMMMMMMM -->
+        <h1 id="timerClock">0.00</h1> 
     </div>
     <table id="listOfAverages"> <!--Pannel displaying time/avreages and best time/averages -->
         <tr>
