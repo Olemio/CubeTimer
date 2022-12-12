@@ -8,10 +8,7 @@
 
 <?php 
     include 'php/connectionInfo.php';
-
-    echo "Before func"; 
-    echo $_POST["score"]; 
-    echo "Before func"; 
+    
     if (isset($_POST["score"])) {
 
         //Opprette kobling
